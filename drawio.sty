@@ -1,0 +1,43 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{drawio}[2014/08/21 DrawIO]
+
+\RequirePackage{filemod}
+\RequirePackage{ifthen}
+
+\RequirePackage{xargs}
+
+\newboolean{b@nocache}
+\DeclareOption{nocache}{\setboolean{b@nocache}{false}}
+
+\ProcessOptions
+
+
+\newcommand{\executeiffilenewer}[3]{
+ \filemodCmp{#1}{#2}{#3}{}
+}
+
+\newcommand{\includedrawio}[2][width=\textwidth]{
+ \ifthenelse{\boolean{b@nocache}}{
+  \immediate\write18{drawio --export #2.drawio --crop --format pdf --output #2.drawio.pdf}
+ }{
+  \executeiffilenewer{#2.drawio}{#2.drawio.pdf}{
+   \message{Converting file #2}
+   \immediate\write18{drawio --export #2.drawio --crop --format pdf --output #2.drawio.pdf}
+  }
+ }
+ \includegraphics[#1]{#2.drawio.pdf}
+}
+
+\newcommandx\includedrawiopage[3][2=0, 3=1.0, usedefault]{
+ \ifthenelse{\boolean{b@nocache}}{
+  \immediate\write18{drawio --export #3.drawio --crop --format pdf --page-index #2 --output #1-#2.drawio.pdf}
+ }{
+  \executeiffilenewer{#1.drawio}{#1-#2.drawio.pdf}{
+   \message{Converting file #1}
+   \message{Page is #2}
+   \message{Executing command: drawio --export #1.drawio --crop --format pdf --page-index #2 --output #1-#2.drawio.pdf }
+   \immediate\write18{drawio --export #1.drawio --crop --format pdf --page-index #2 --output #1-#2.drawio.pdf}
+  }
+ }
+ \includegraphics[width=#3\textwidth]{#1-#2.drawio.pdf}
+}
