@@ -1,6 +1,8 @@
 # drawio-latex
 LaTeX package to include draw.io (diagrams.net) diagrams without having to manually export them.
 
+![doc/overview.png](doc/overview.png)
+
 ## Dependencies
 
 This package requires **draw.io desktop** to be installed. For installation instructions please read https://github.com/jgraph/drawio-desktop/releases .
