@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{drawio}
+ 
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{ Example: drawio.sty }
+\author{ Fabian Reister }
+\date{\today}
+
+\begin{document}
+\maketitle	
+\pagebreak
+
+
+\section{Including a diagram}
+
+\begin{figure}[ht]
+    \centering
+    \includedrawio[width=0.7\textwidth]{Figures/example}
+    \caption{Some caption}
+    \label{fig:mylabel}
+\end{figure}
+
+
+
+\end{document}
