@@ -25,7 +25,7 @@ Add the following to your LaTeX header
     \usepackage[]{drawio}
 
 
-Then, whereever you want to include your diagram, use **\includedrawio** instead of **\includegraphics**. **\includedrawio** is just a wrapper for **\includegraphics**. It will convert a drawio diagram to a pdf file (vector graphics)  
+Then, whereever you want to include your diagram, use **\includedrawio** instead of **\includegraphics**. **\includedrawio** is just a wrapper for **\includegraphics**. It will convert a drawio diagram to a pdf file (vector graphics). This pdf file will live next to its corresponding *.drawio file.
 
     \begin{figure}[ht]
      \centering
@@ -33,7 +33,15 @@ Then, whereever you want to include your diagram, use **\includedrawio** instead
      \caption{Some caption}
      \label{fig:mylabel}
     \end{figure}
+
+If your drawio diagram file consists of mutiple pages, you might want to use
+
+     \includedrawiopage{Figures/path/to/drawio/diagram/without/extension}[12][0.7]
+     
+to include the 12th page. Note, the interface is slighlty different. Here, only the textwidth can be set.
     
+## Customization 
+
 ## Acknowledgement
  
 The research leading to these results has received funding from the Carl Zeiss Foundation.
