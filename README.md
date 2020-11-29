@@ -38,9 +38,18 @@ If your drawio diagram file consists of mutiple pages, you might want to use
 
      \includedrawiopage{Figures/path/to/drawio/diagram/without/extension}[12][0.7]
      
-to include the 12th page. Note, the interface is slighlty different. Here, only the textwidth can be set.
+to include the 12th page. Note, the interface is slighlty different. Here, only *textwidth* can be set.
     
-## Customization 
+## Customization
+
+### 1. GIT integration
+
+The generated pdf files will be created in the same directory as the original diagram. Say, you have a diagram *a.drawio*, then the pdf will be *a.drawio.pdf*. As drawio desktop has to be available to generate the diagrams, you might either add the pdf artifacts to .gitignore, e.g.
+
+    *.drawio.pdf
+
+or you might want to explicitly add them to your repository. This might be advantageous, if you collaborate with others not having *drawio desktop* installed on their machines. 
+
 
 ## Acknowledgement
  
