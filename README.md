@@ -50,6 +50,9 @@ The generated pdf files will be created in the same directory as the original di
 
 or you might want to explicitly add them to your repository. This might be advantageous, if you collaborate with others not having *drawio desktop* installed on their machines. 
 
+## Example
+
+Within the *example* folder, you will find a minimal LaTeX setup of how to use this package.
 
 ## Acknowledgement
  
