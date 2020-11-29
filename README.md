@@ -1,7 +1,7 @@
 # drawio-latex
 LaTeX package to include draw.io (diagrams.net) diagrams without having to manually export them.
 
-![doc/overview.png](doc/overview.png)
+![Overview](doc/overview.png)
 
 ## Dependencies
 
