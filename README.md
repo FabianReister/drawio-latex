@@ -11,7 +11,7 @@ Required LaTeX dependencies (also listed in drawio.sty):
 
 ## Configuration
 
- - [**cache**|nocache] if disabled, conversions are always executed
+ - [**cache**|nocache] if disabled, conversions are always be executed
 
 bold = default
 
@@ -27,9 +27,15 @@ Add the following to your LaTeX header
 
 Then, whereever you want to include your diagram, use **\includedrawio** instead of **\includegraphics**. **\includedrawio** is just a wrapper for **\includegraphics**. It will convert a drawio diagram to a pdf file (vector graphics)  
 
-\begin{figure}[H]
- \centering
- \includedrawio[width=0.7\textwidth]{Figures/own/concept/architecture-option-critic-style-simplified-presentation}
- \caption{The hierarchy of the options and the policy over options (adopted from~\cite{bacon2017option}).}
- \label{fig:methods:options-simplified}
-\end{figure}
+    \begin{figure}[ht]
+     \centering
+     \includedrawio[width=0.7\textwidth]{Figures/path/to/drawio/diagram/without/extension}
+     \caption{Some caption}
+     \label{fig:mylabel}
+    \end{figure}
+    
+## Acknowledgement
+ 
+The research leading to these results has received funding from the Carl Zeiss Foundation.
+
+The research was performed at the Institute for Anthropomatics and Robotics - Intelligent Process Automation and Robotics Lab (IAR-IPR), Karlsruhe Institute of Technology (KIT).
