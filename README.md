@@ -44,7 +44,7 @@ to include the 12th page. Note, the interface is slighlty different. Here, only 
 
 ### 1. GIT integration
 
-The generated pdf files will be created in the same directory as the original diagram. Say, you have a diagram *a.drawio*, then the pdf will be *a.drawio.pdf*. As drawio desktop has to be available to generate the diagrams, you might either add the pdf artifacts to .gitignore, e.g.
+The generated pdf files will be created in the same directory as the original diagram. Let's say, you have a diagram *a.drawio*, then the pdf will be *a.drawio.pdf*. As drawio desktop has to be available to generate the diagrams, you might either add the pdf artifacts to .gitignore, e.g.
 
     *.drawio.pdf
 
